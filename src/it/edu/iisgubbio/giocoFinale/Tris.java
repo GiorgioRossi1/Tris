@@ -2,6 +2,7 @@ package it.edu.iisgubbio.giocoFinale;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
@@ -24,7 +25,7 @@ public class Tris extends Application{
 
 	public void start(Stage finestra) throws Exception {
 		
-		Pane quadro = new Pane();
+		
 		quadro.setPrefSize(LARGHEZZA_AREA_GIOCO, ALTEZZA_AREA_GIOCO);
 		quadro.getChildren().add(rete1);
 		rete1.setStartX(LARGHEZZA_AREA_GIOCO / 3);
@@ -51,13 +52,36 @@ public class Tris extends Application{
 		finestra.setTitle("PONG"); 
 		finestra.setScene(scene);
 		finestra.show();
-		scene.getStylesheets().add("it/edu/iisgubbio/animazioni/Stile.css");
-		
+		scene.setOnMouseClicked(e -> pigiato(e));
+
 
 
 
 
 	}
+	
+	public void pigiato(MouseEvent evento) {
+		int xClick = (int) evento.getSceneX();
+		int yClick = (int) evento.getSceneY();
+		if(xClick > DISTANZA_DAL_BORDO && xClick < LARGHEZZA_AREA_GIOCO / 3 && yClick > DISTANZA_DAL_BORDO && yClick < ALTEZZA_AREA_GIOCO / 3) {
+			Line LineaCroce1 = new Line();
+			Line LineaCroce2 = new Line();
+			quadro.getChildren().add(LineaCroce1);
+			quadro.getChildren().add(LineaCroce2);
+			LineaCroce1.setStartX(DISTANZA_DAL_BORDO + 10);
+			LineaCroce1.setStartY(DISTANZA_DAL_BORDO + 10);
+			LineaCroce1.setEndX(LARGHEZZA_AREA_GIOCO / 3 - 10);
+			LineaCroce1.setEndY(ALTEZZA_AREA_GIOCO / 3 - 10);
+			LineaCroce2.setStartX(LARGHEZZA_AREA_GIOCO / 3 - 10);
+			LineaCroce2.setStartY(DISTANZA_DAL_BORDO + 10);
+			LineaCroce2.setEndX(DISTANZA_DAL_BORDO + 10);
+			LineaCroce2.setEndY(ALTEZZA_AREA_GIOCO / 3 - 10);
+			
+		}
+		
+
+	}
+	
 	
 
 	
