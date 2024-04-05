@@ -20,6 +20,7 @@ public class Tris extends Application{
 	Line rete4 = new Line();
 	boolean menu = true;
 	double numeroCasuale = 0;
+	boolean primoQuadrante = true;
 
 	
 
@@ -61,22 +62,23 @@ public class Tris extends Application{
 	}
 	
 	public void pigiato(MouseEvent evento) {
+		
 		int xClick = (int) evento.getSceneX();
 		int yClick = (int) evento.getSceneY();
-		if(xClick > DISTANZA_DAL_BORDO && xClick < LARGHEZZA_AREA_GIOCO / 3 && yClick > DISTANZA_DAL_BORDO && yClick < ALTEZZA_AREA_GIOCO / 3) {
+		if(primoQuadrante = true && xClick > DISTANZA_DAL_BORDO && xClick < LARGHEZZA_AREA_GIOCO / 3 && yClick > DISTANZA_DAL_BORDO && yClick < ALTEZZA_AREA_GIOCO / 3) {
 			Line LineaCroce1 = new Line();
 			Line LineaCroce2 = new Line();
 			quadro.getChildren().add(LineaCroce1);
 			quadro.getChildren().add(LineaCroce2);
-			LineaCroce1.setStartX(DISTANZA_DAL_BORDO + 10);
-			LineaCroce1.setStartY(DISTANZA_DAL_BORDO + 10);
-			LineaCroce1.setEndX(LARGHEZZA_AREA_GIOCO / 3 - 10);
-			LineaCroce1.setEndY(ALTEZZA_AREA_GIOCO / 3 - 10);
-			LineaCroce2.setStartX(LARGHEZZA_AREA_GIOCO / 3 - 10);
-			LineaCroce2.setStartY(DISTANZA_DAL_BORDO + 10);
-			LineaCroce2.setEndX(DISTANZA_DAL_BORDO + 10);
-			LineaCroce2.setEndY(ALTEZZA_AREA_GIOCO / 3 - 10);
-			
+			LineaCroce1.setStartX(DISTANZA_DAL_BORDO + 20);
+			LineaCroce1.setStartY(DISTANZA_DAL_BORDO + 20);
+			LineaCroce1.setEndX(LARGHEZZA_AREA_GIOCO / 3 - 20);
+			LineaCroce1.setEndY(ALTEZZA_AREA_GIOCO / 3 - 20);
+			LineaCroce2.setStartX(LARGHEZZA_AREA_GIOCO / 3 - 20);
+			LineaCroce2.setStartY(DISTANZA_DAL_BORDO + 20);
+			LineaCroce2.setEndX(DISTANZA_DAL_BORDO + 20);
+			LineaCroce2.setEndY(ALTEZZA_AREA_GIOCO / 3 - 20);
+			primoQuadrante = false;
 		}
 		
 
