@@ -1,6 +1,8 @@
 package it.edu.iisgubbio.giocoFinale;
 
 import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
@@ -16,9 +18,23 @@ public class InterfacciaGioco extends Application{
 		Button bGioca = new Button("Gioca");
 		
 		public void start(Stage finestra) {
-			griglia.add(lTitolo, 0, 0)
-			;
-		}
+			 Image i = new Image(getClass().getResourceAsStream("logo.png"));
+		        ImageView iw = new ImageView(i);
+		        iw.setFitWidth(900);
+		        iw.setFitHeight(900);
+			griglia.add(lTitolo, 0, 0);
+			griglia.add(lNomi, 0, 1);
+			griglia.add(bGioca, 0, 3);
+			griglia.add(iw, 0, 2);
+			
+			griglia.setPadding(new Insets(5, 5, 5, 5));
+			griglia.setHgap(15); 
+			griglia.setVgap(15);
+			Scene scena = new Scene(griglia);
+			finestra.setTitle("tris");
+			finestra.setScene(scena);
+			finestra.show();
+			}
 	
 	public static void main(String args[]){
 		launch();

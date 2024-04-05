@@ -1,9 +1,15 @@
 package it.edu.iisgubbio.giocoFinale;
 
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Line;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 
@@ -19,6 +25,10 @@ public class Tris extends Application{
 	Line rete4 = new Line();
 	boolean menu = true;
 	double numeroCasuale = 0;
+	GridPane griglia = new GridPane();
+	Label lTitolo = new Label("TRIS");
+	Label lNomi = new Label("Rossi Giorgio, Luchetti Simone, Menichetti Lorenzo");
+	Button bGioca = new Button("Gioca");
 
 	
 
@@ -46,9 +56,20 @@ public class Tris extends Application{
 		rete4.setStartY(ALTEZZA_AREA_GIOCO / 3 + ALTEZZA_AREA_GIOCO / 3);
 		rete4.setEndX(LARGHEZZA_AREA_GIOCO - DISTANZA_DAL_BORDO);
 		rete4.setEndY(ALTEZZA_AREA_GIOCO / 3 + ALTEZZA_AREA_GIOCO / 3);
+		
+		 Image i = new Image(getClass().getResourceAsStream("logo.png"));
+	        ImageView iw = new ImageView(i);
+	        iw.setFitWidth(900);
+	        iw.setFitHeight(900);
+		griglia.add(lTitolo, 0, 0);
+		griglia.add(lNomi, 0, 1);
+		griglia.add(bGioca, 0, 3);
+		griglia.add(iw, 0, 2);
+		
+		
 
 		Scene scene = new Scene(quadro);
-		finestra.setTitle("PONG"); 
+		finestra.setTitle("TRIS"); 
 		finestra.setScene(scene);
 		finestra.show();
 		scene.getStylesheets().add("it/edu/iisgubbio/animazioni/Stile.css");
