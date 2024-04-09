@@ -8,7 +8,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
-import javafx.scene.text.Font;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -19,7 +18,7 @@ public class InterfacciaGioco extends Application{
 		Label lTitolo = new Label("TRIS");
 		Label lNomi = new Label("Rossi Giorgio, Luchetti Simone, Menichetti Lorenzo");
 		Button bGioca = new Button("Gioca");
-		Font Font = new Font( "Didot", 12);
+		
 		
 		public void start(Stage finestra) {
 			 Image i = new Image(getClass().getResourceAsStream("logo.png"));
@@ -30,7 +29,7 @@ public class InterfacciaGioco extends Application{
 			griglia.add(lNomi, 0, 1);
 			griglia.add(bGioca, 0, 3);
 			griglia.add(iw, 0, 2);
-			lTitolo.getStyleClass().add("titolo");
+			lTitolo.getStyleClass().add("tris");
 			lNomi.getStyleClass().add("titolo");
 			bGioca.getStyleClass().add("bottone");
 			griglia.getStyleClass().add("sfondo");
@@ -39,9 +38,7 @@ public class InterfacciaGioco extends Application{
 			vincoliSecondaColonna.setHalignment(HPos.CENTER);
 			griglia.getColumnConstraints().addAll(vincoliSecondaColonna);
 			bGioca.setMaxWidth(300);
-			lTitolo.setFont(Font);
-			lNomi.setFont(Font);
-			bGioca.setFont(Font);
+			
 			
 			griglia.setPadding(new Insets(5, 5, 5, 5));
 			griglia.setHgap(15); 

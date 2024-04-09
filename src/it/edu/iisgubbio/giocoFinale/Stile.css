@@ -5,11 +5,17 @@
 .titolo{
 	-fx-text-fill: rgb(255, 255, 255);
 	-fx-font-size: 30;
+	-fx-font: italic bold 16pt "Arial Black";
 }
 .bottone{
 	-fx-text-fill: rgb(255, 255, 255);
 	-fx-background-color: rgb(255, 87, 87);
 	-fx-font-size: 30;
 	-fx-border-color: rgb(255, 255, 255);
-	
+	-fx-font: italic bold 16pt "Arial Black";
+}
+.tris{
+	-fx-text-fill: rgb(255, 255, 255);
+	-fx-font-size: 30;
+	-fx-font: italic bold 45pt "Courier New";
 }
