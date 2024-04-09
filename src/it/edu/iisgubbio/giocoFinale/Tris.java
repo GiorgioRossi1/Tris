@@ -29,7 +29,7 @@ public class Tris extends Application{
 	Label lTitolo = new Label("TRIS");
 	Label lNomi = new Label("Rossi Giorgio, Luchetti Simone, Menichetti Lorenzo");
 	Button bGioca = new Button("Gioca");
-
+	
 	
 
 	public void start(Stage finestra) throws Exception {
@@ -66,13 +66,18 @@ public class Tris extends Application{
 		griglia.add(bGioca, 0, 3);
 		griglia.add(iw, 0, 2);
 		
+		lTitolo.getStyleClass().add("titolo");
+		lNomi.getStyleClass().add("titolo");
+		bGioca.getStyleClass().add("bottone");
+		griglia.getStyleClass().add("sfondo");
+		
 		
 
 		Scene scene = new Scene(quadro);
 		finestra.setTitle("TRIS"); 
 		finestra.setScene(scene);
 		finestra.show();
-		scene.getStylesheets().add("it/edu/iisgubbio/animazioni/Stile.css");
+		scene.getStylesheets().add("it/edu/iisgubbio/giocoFinale/Stile.css");
 		
 
 
