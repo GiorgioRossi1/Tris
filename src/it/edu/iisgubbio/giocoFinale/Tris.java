@@ -3,6 +3,7 @@ package it.edu.iisgubbio.giocoFinale;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Line;
 import javafx.scene.control.Button;
@@ -25,6 +26,7 @@ public class Tris extends Application{
 	Line rete4 = new Line();
 	boolean menu = true;
 	double numeroCasuale = 0;
+	boolean primoQuadrante = true;
 	GridPane griglia = new GridPane();
 	Label lTitolo = new Label("TRIS");
 	Label lNomi = new Label("Rossi Giorgio, Luchetti Simone, Menichetti Lorenzo");
@@ -34,7 +36,7 @@ public class Tris extends Application{
 
 	public void start(Stage finestra) throws Exception {
 		
-		Pane quadro = new Pane();
+		
 		quadro.setPrefSize(LARGHEZZA_AREA_GIOCO, ALTEZZA_AREA_GIOCO);
 		quadro.getChildren().add(rete1);
 		rete1.setStartX(LARGHEZZA_AREA_GIOCO / 3);
@@ -77,13 +79,38 @@ public class Tris extends Application{
 		finestra.setTitle("TRIS"); 
 		finestra.setScene(scene);
 		finestra.show();
-		scene.getStylesheets().add("it/edu/iisgubbio/giocoFinale/Stile.css");
-		
 
+		scene.getStylesheets().add("it/edu/iisgubbio/giocoFinale/Stile.css");
+
+		scene.setOnMouseClicked(e -> pigiato(e));
 
 
 
 	}
+	
+	public void pigiato(MouseEvent evento) {
+		
+		int xClick = (int) evento.getSceneX();
+		int yClick = (int) evento.getSceneY();
+		if(primoQuadrante = true && xClick > DISTANZA_DAL_BORDO && xClick < LARGHEZZA_AREA_GIOCO / 3 && yClick > DISTANZA_DAL_BORDO && yClick < ALTEZZA_AREA_GIOCO / 3) {
+			Line LineaCroce1 = new Line();
+			Line LineaCroce2 = new Line();
+			quadro.getChildren().add(LineaCroce1);
+			quadro.getChildren().add(LineaCroce2);
+			LineaCroce1.setStartX(DISTANZA_DAL_BORDO + 20);
+			LineaCroce1.setStartY(DISTANZA_DAL_BORDO + 20);
+			LineaCroce1.setEndX(LARGHEZZA_AREA_GIOCO / 3 - 20);
+			LineaCroce1.setEndY(ALTEZZA_AREA_GIOCO / 3 - 20);
+			LineaCroce2.setStartX(LARGHEZZA_AREA_GIOCO / 3 - 20);
+			LineaCroce2.setStartY(DISTANZA_DAL_BORDO + 20);
+			LineaCroce2.setEndX(DISTANZA_DAL_BORDO + 20);
+			LineaCroce2.setEndY(ALTEZZA_AREA_GIOCO / 3 - 20);
+			primoQuadrante = false;
+		}
+		
+
+	}
+	
 	
 
 	
