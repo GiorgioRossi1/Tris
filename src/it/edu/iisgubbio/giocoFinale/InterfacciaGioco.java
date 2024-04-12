@@ -41,9 +41,9 @@ public class InterfacciaGioco extends Application{
 			bGioca.getStyleClass().add("bottone");
 			griglia.getStyleClass().add("sfondo");
 			bGioca.setMaxWidth(200);
-			ColumnConstraints vincoliSecondaColonna = new ColumnConstraints();
-			vincoliSecondaColonna.setHalignment(HPos.CENTER);
-			griglia.getColumnConstraints().addAll(vincoliSecondaColonna);
+			ColumnConstraints Prima = new ColumnConstraints();
+			Prima.setHalignment(HPos.CENTER);
+			griglia.getColumnConstraints().addAll(Prima);
 			bGioca.setMaxWidth(300);
 			
 			bGiocatoreSingolo.setOnAction(e ->singolo());
@@ -69,6 +69,9 @@ public class InterfacciaGioco extends Application{
 			griglia.add(lDueGiocatori, 1, 0);
 			griglia.add(bGiocatoreSingolo, 0, 1);
 			griglia.add(bDueGiocatori, 1, 1);
+			Image i = new Image(getClass().getResourceAsStream("logo.png"));
+		    ImageView iw = new ImageView(i);
+		
 		}
 		public void singolo() {
 			
