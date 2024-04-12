@@ -6,6 +6,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.image.Image;
@@ -40,6 +41,7 @@ public class InterfacciaGioco extends Application{
 			lNomi.getStyleClass().add("titolo");
 			bGioca.getStyleClass().add("bottone");
 			griglia.getStyleClass().add("sfondo");
+		
 			bGioca.setMaxWidth(200);
 			ColumnConstraints Prima = new ColumnConstraints();
 			Prima.setHalignment(HPos.CENTER);
@@ -67,10 +69,26 @@ public class InterfacciaGioco extends Application{
 			iw.setVisible(false);
 			griglia.add(lGiocatoreSingolo, 0, 0);
 			griglia.add(lDueGiocatori, 1, 0);
-			griglia.add(bGiocatoreSingolo, 0, 1);
-			griglia.add(bDueGiocatori, 1, 1);
-			Image i = new Image(getClass().getResourceAsStream("logo.png"));
-		    ImageView iw = new ImageView(i);
+			griglia.add(bGiocatoreSingolo, 0, 2);
+			griglia.add(bDueGiocatori, 1, 2);
+			Image i = new Image(getClass().getResourceAsStream("single.png"));
+		    ImageView si = new ImageView(i);
+		    BorderPane nome1 = new BorderPane(si);
+		    Image i2 = new Image(getClass().getResourceAsStream("multi.png"));
+		    ImageView mu = new ImageView(i2);
+		    BorderPane nome2 = new BorderPane(mu);
+		    griglia.add(nome1, 0,1);
+		    griglia.add(nome2, 1, 1);
+		    lGiocatoreSingolo.getStyleClass().add("label2");
+			lDueGiocatori.getStyleClass().add("label2");
+			bDueGiocatori.getStyleClass().add("bottone");
+			bGiocatoreSingolo.getStyleClass().add("bottone");
+			si.setFitWidth(200);
+		    mu.setFitHeight(200);
+			nome1.getStyleClass().add("img");
+			nome2.getStyleClass().add("img");
+		
+		
 		
 		}
 		public void singolo() {

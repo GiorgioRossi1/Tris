@@ -19,3 +19,15 @@
 	-fx-font-size: 30;
 	-fx-font: italic bold 45pt "Courier New";
 }
+.label2{
+	-fx-text-fill: rgb(255, 255, 255);
+	-fx-background-color: rgb(255, 87, 87);
+	-fx-font-size: 50;
+	-fx-font: italic bold 16pt "Arial Black";
+}
+.img{
+    -fx-border-style: solid;
+    -fx-border-color: black;
+	-fx-max-width:200;
+	-fx-max-height:200;
+}
