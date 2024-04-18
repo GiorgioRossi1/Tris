@@ -3,6 +3,7 @@ package it.edu.iisgubbio.giocoFinale;
 import javafx.application.Application;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.geometry.VPos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -12,6 +13,7 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.RowConstraints;
+import javafx.scene.media.AudioClip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -32,13 +34,18 @@ public class InterfacciaGioco extends Application{
 		
 		
 		public void start(Stage finestra) {
-			
+			//griglia.setGridLinesVisible(true);
+			griglia.setAlignment(Pos.CENTER);
+			AudioClip musica = new AudioClip(getClass().getResource("kahoot.mp3").toString());
+			musica.cycleCountProperty();
+			musica.setCycleCount(20);
+			musica.play();
 		        iw.setFitWidth(700);
 		        iw.setFitHeight(700);
-			griglia.add(lTitolo, 0, 0);
-			griglia.add(lNomi, 0, 1);
-			griglia.add(bGioca, 0, 3);
-			griglia.add(iw, 0, 2);
+			griglia.add(lTitolo, 3, 0);
+			griglia.add(lNomi, 3, 1);
+			griglia.add(bGioca, 3, 3);
+			griglia.add(iw, 3, 2);
 			
 		
 			
@@ -60,6 +67,8 @@ public class InterfacciaGioco extends Application{
 			Quinta.setHalignment(HPos.CENTER);
 			ColumnConstraints Sesta = new ColumnConstraints();
 			Sesta.setHalignment(HPos.CENTER);
+			ColumnConstraints Settima = new ColumnConstraints();
+			Settima.setHalignment(HPos.CENTER);
 			RowConstraints vincoliRiga0 = new RowConstraints();
 			vincoliRiga0.setValignment(VPos.CENTER);
 			RowConstraints vincoliRiga1 = new RowConstraints();
@@ -78,12 +87,14 @@ public class InterfacciaGioco extends Application{
 			griglia.getColumnConstraints().addAll(Quarta);
 			griglia.getColumnConstraints().addAll(Quinta);
 			griglia.getColumnConstraints().addAll(Sesta);
+			griglia.getColumnConstraints().addAll(Settima);
 			griglia.getRowConstraints().addAll(vincoliRiga0);
 			griglia.getRowConstraints().addAll(vincoliRiga1);
 			griglia.getRowConstraints().addAll(vincoliRiga2);		
 			griglia.getRowConstraints().addAll(vincoliRiga3);			
 			griglia.getRowConstraints().addAll(vincoliRiga4);		
-			griglia.getRowConstraints().addAll(vincoliRiga5);
+			griglia.getRowConstraints().addAll(vincoliRiga5);			
+			
 			
 			
 			bGioca.setMaxWidth(300);
@@ -113,15 +124,15 @@ public class InterfacciaGioco extends Application{
 			griglia.getChildren().remove(lNomi);
 			griglia.getChildren().remove(bGioca);
 			griglia.getChildren().remove(iw);
-			//griglia.setGridLinesVisible(true);;
+			griglia.setGridLinesVisible(true);;
 			griglia.add(lGiocatoreSingolo, 3, 0);
 			griglia.add(lDueGiocatori, 3, 3);
 			griglia.add(bGiocatoreSingolo, 2, 1);
 			griglia.add(bDueGiocatori, 2, 4);
-			Image i = new Image(getClass().getResourceAsStream("single.png"));
+			Image i = new Image(getClass().getResourceAsStream("1.jpg"));
 		    ImageView si = new ImageView(i);
 		    BorderPane nome1 = new BorderPane(si);
-		    Image i2 = new Image(getClass().getResourceAsStream("multi.png"));
+		    Image i2 = new Image(getClass().getResourceAsStream("2.jpg"));
 		    ImageView mu = new ImageView(i2);
 		    BorderPane nome2 = new BorderPane(mu);
 		    BorderPane nome3 = new BorderPane(iw);
@@ -134,7 +145,9 @@ public class InterfacciaGioco extends Application{
 			bDueGiocatori.getStyleClass().add("bottone");
 			bGiocatoreSingolo.getStyleClass().add("bottone");
 			si.setFitWidth(200);
+			si.setFitHeight(200);
 		    mu.setFitHeight(200);
+		    mu.setFitWidth(200);
 		    iw.setFitHeight(300);
 		    iw.setFitWidth(300);
 			nome1.getStyleClass().add("img");
