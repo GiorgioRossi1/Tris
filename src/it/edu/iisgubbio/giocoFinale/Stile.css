@@ -1,36 +1,199 @@
+@font-face {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    src: url('OpenSans-Bold.ttf');
+}
 
-.sfondo{
-	-fx-background-color: rgb(255, 87, 87)
+#sfondoTitolo{
+	-fx-background-color: rgb(255, 255, 255);
 }
-.titolo{
+
+#sfondoGioco{
+	-fx-background-color: white;
+}
+
+#pannelloImpostazioni{
+	-fx-fill: #737373;
+}
+#sottoSlider{
+	-fx-fill: #343934;
+}
+
+#labelCountdown{
+	-fx-font-size : 200px;
+	-fx-font-family: 'Open Sans';	
+	-fx-text-fill : black;
+	-fx-alignment: center;
+}
+
+#labelVintoX{
+	-fx-font-size : 80px;
+	-fx-font-family: 'Open Sans';	
+	-fx-text-fill : #1a4986;
+	-fx-alignment: center;
+}
+
+#labelPareggio{
+	-fx-font-size : 80px;
+	-fx-font-family: 'Open Sans';	
+	-fx-text-fill : #343934;
+	-fx-alignment: center;
+}
+
+#labelVintoO{
+	-fx-font-size : 80px;
+	-fx-font-family: 'Open Sans';	
+	-fx-text-fill : #d13535;
+	-fx-alignment: center;
+}
+
+#ombraPannelloImpostazioni{
+	-fx-fill: #343934;
+}
+
+#bottoneEsci{
+	-fx-background-color : #d35135;
+	-fx-background-radius : 30;
+	-fx-background-insets : 0;
+	-fx-text-fill : white;
+	-fx-font-size : 16px;
+	-fx-font-family: 'Open Sans';	
+}
+
+#bottoneFattoImpostazioni{
+	-fx-background-color :#00bf63 ;
+	-fx-background-radius : 10;
+	-fx-background-insets : 0;
+	-fx-text-fill : white;
+	-fx-font-size : 19px;
+	-fx-font-family: 'Open Sans';	
+}
+
+#bottoneRematchFineGioco{
+	-fx-background-color :#737373;
+	-fx-background-radius : 10;
+	-fx-background-insets : 0;
+	-fx-text-fill : white;
+	-fx-font-size : 19px;
+	-fx-font-family: 'Open Sans';	
+}
+
+#bottoneRematchFineGioco:hover {
+	-fx-background-color :#a6a6a6;	
+}
+
+#bottoneRematchFineOmbraGioco{
+	-fx-background-color :#343934;
+	-fx-background-radius : 10;
+	-fx-background-insets : 0;
+	-fx-text-fill : white;
+	-fx-font-size : 19px;
+	-fx-font-family: 'Open Sans';	
+}
+
+#labelContaPuntiGioco {
+	-fx-font-size : 50px;
+	-fx-font-family: 'Open Sans';	
+	-fx-text-fill : #a6a6a6;
+	-fx-alignment: center;
+}
+
+#ombraBottoneFattoImpostazioni{
+	-fx-background-color :#3aa83b ;
+	-fx-background-radius : 10;
+	-fx-background-insets : 0;
+}
+
+#bottoneFattoImpostazioni:hover{
+	-fx-background-color :#7ed957 ;	
+}
+
+#bottoneEsci:hover{
+	-fx-background-color : #ff3600;	
+}
+
+#labelDifficoltaImpostazioni{
+	-fx-font-size : 30px;
+	-fx-font-family: 'Open Sans';	
+	-fx-text-fill : #343934;
+	-fx-background-color :#a6a6a6 ;
+	-fx-background-radius : 10;
+	-fx-alignment: center;
+}
+
+.slider {
+	-fx-pref-width: 230px;
+}
+
+.slider .thumb {
+	-fx-pref-height : 32px;
+	-fx-pref-width: 32px;
+	-fx-background-color: #343934;
+	-fx-background-radius : 50;
+}
+
+.slider .track {
+	-fx-background-color : linear-gradient(to right, green, yellow, red);
+	-fx-background-radius : 10;
+	-fx-pref-height: 20px;
+}
+
+#bottoniIniziali{
+	-fx-background-color : #737373;
+	-fx-background-radius : 30;
+	-fx-background-insets : 0;
+	-fx-text-fill : white;
+	-fx-font-size : 19px;
+	-fx-font-family: 'Open Sans';	
+}
+
+#bottoniIniziali:hover {
+    -fx-background-color: #a6a6a6; 
+}
+
+#bottoniInizialiOmbra{
+	-fx-background-color : #343934;
+	-fx-background-radius : 30;
+	-fx-background-insets : 0;	
+}
+
+#sfondotitolo{
 	-fx-text-fill: rgb(255, 255, 255);
 	-fx-font-size: 30;
 	-fx-font: italic bold 16pt "Arial Black";
 }
-.bottone{
-	-fx-text-fill: rgb(255, 255, 255);
-	-fx-background-color: rgb(255, 87, 87);
-	-fx-font-size: 30;
+#lineeDiMezzo {
+	-fx-stroke : grey;
+	-fx-stroke-width : 5px;	
+}
+
+#lineeDiVittoria {
+	-fx-stroke : #343934;
+	-fx-stroke-width : 20px;	
+}
+
+#bottoniMosse {
+	-fx-background-color: white;
+	-fx-font-size: 100;
 	-fx-border-color: rgb(255, 255, 255);
-	-fx-font: italic bold 16pt "Arial Black";
-	text-align: center;
-	
+	-fx-text-fill: black;	
+	-fx-font-family: 'Open Sans';
+	-fx-alignment: center;
+	-fx-padding: 0,0,0,0;
+	-fx-pref-width: 165;
+	-fx-pref-height: 165;	
 }
-.tris{
+#cerchioTurnoX {
+	-fx-fill : #0080c0;
+}
+#cerchioTurnoO {
+	-fx-fill : #f25235;
+}
+#sottoBordoCerchioTurno {
+	-fx-fill : #c0c0c0;
+}
+#labelTurno {
 	-fx-text-fill: rgb(255, 255, 255);
 	-fx-font-size: 30;
-	-fx-font: italic bold 45pt "Courier New";
-}
-.label2{
-	-fx-text-fill: rgb(255, 255, 255);
-	-fx-background-color: rgb(255, 87, 87);
-	-fx-font-size: 50;
-	text-align: center;
-	-fx-font: italic bold 16pt "Arial Black";
-}
-.img{
-    -fx-border-style: solid;
-    -fx-border-color: black;
-	-fx-max-width:200;
-	-fx-max-height:200;
+	-fx-font-family: 'Open Sans';	
 }
